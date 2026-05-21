@@ -100,12 +100,13 @@ class MNISTClassification:
     def display(self) -> None:
         
         plt.figure(figsize = (10, 12))
-        plt.plot(self.train_loss_graph)
-        plt.plot(self.val_loss_graph)
+        plt.plot(range(1, self.epochs + 1), self.train_loss_graph)
+        plt.plot(range(1, self.epochs + 1), self.val_loss_graph)
         plt.title("Loss Graph")
         plt.xlabel("Epochs")
         plt.ylabel("Loss")
         plt.legend(["Train Loss", "Validation Loss"])
+        plt.savefig("Results/train_val_loss_plot.png")
         plt.show()
 
 # The main function call
